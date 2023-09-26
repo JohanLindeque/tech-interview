@@ -1,6 +1,12 @@
 # Technical Interview
 
-## API Endpoint 
+## Instruksie
+
+1. Skep 'n nuwe issue en branch vanaf die issue op GitHub.
+2. Skep nuwe projek in taal van jou keuse om die probleem hieronder op te los.
+3. Dis nie 'n eksamen nie
+
+## Probleem
 
 [API Endpoint](https://4c9baa0f-7c69-4e96-9b24-4589c1231f12.mock.pstmn.io/inventoryfeed)
 

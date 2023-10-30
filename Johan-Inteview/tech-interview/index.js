@@ -1,4 +1,4 @@
-// Johan Lindeque
+// Johan Lindeque 
 
 // The Api url with data
 const ApiUrl = 'https://4c9baa0f-7c69-4e96-9b24-4589c1231f12.mock.pstmn.io/inventoryfeed';
@@ -28,10 +28,8 @@ async function getProductsData(){
             // Call the function to display the data
             displayTheData();
            
-        }
-       
+        }  
     }
-
 }
 
 // Call the function to get the data
@@ -39,7 +37,7 @@ getProductsData();
 
 //  Display all the data on the frontend 
 function displayTheData(){
-    
+    // Call the functions to display the data
     top3Sales(products);
     lowerQtyThenSold(products);
     itemsNeedRestockInventory(products);
@@ -128,9 +126,6 @@ function itemsNeedRestockInventory(products){
 
     const displaySection = document.getElementById('displaySection');
     
-
-    
-
     // Create the table to show the data
     const tableHeading = document.createElement('h2');
     tableHeading.textContent = 'Items Requiring New Inventory:';
@@ -169,9 +164,6 @@ function deadStock(products){
 
     const displaySection = document.getElementById('displaySection');
     
-
-    
-
     // Create the table to show the data
     const tableHeading = document.createElement('h2');
     tableHeading.textContent = 'Items that are moving slow(dead stock):';

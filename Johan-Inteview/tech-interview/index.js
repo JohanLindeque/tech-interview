@@ -37,6 +37,7 @@ getProductsData();
 function displayTheData(){
     
     top3Sales(products);
+    lowerQtyThenSold(products);
 
 }
 
@@ -44,10 +45,13 @@ function displayTheData(){
 
 function top3Sales(products) {
     const top3 = products.sort((a, b) => b.qtysold - a.qtysold).slice(0, 3);
-    // Clear existing content
+    
     const displaySection = document.getElementById('displaySection');
-    displaySection.innerHTML = ''; 
 
+    
+    
+
+    // Create the table to show the data
     const tableHeading = document.createElement('h2');
     tableHeading.textContent = 'Top 3 best sellers:';
 
@@ -74,9 +78,36 @@ function top3Sales(products) {
 }
 
 
-// function lowerQtyThenSold(){
-    
-// }
+function lowerQtyThenSold(products){
+   const lowerQty = products.filter(products => products.qtyavailable < products.qtysold);
+   const displaySection = document.getElementById('displaySection');
+
+
+   // Create the table to show the data
+   const tableHeading = document.createElement('h2');
+   tableHeading.textContent = 'Available Qty is less then Qty Sold:';
+
+   const table = document.createElement('table');
+   const headings = ['SKU', 'Description', 'Qty Available', 'Qty Sold'];
+
+   const headerRow = table.insertRow(0);
+   headings.forEach((heading, index) => {
+       const th = document.createElement('th');
+       th.textContent = heading;
+       headerRow.appendChild(th);
+   });
+
+   lowerQty.forEach((product) => {
+       const row = table.insertRow(-1);
+       row.insertCell(0).textContent = product.sku;
+       row.insertCell(1).textContent = product.description;
+       row.insertCell(2).textContent = product.qtyavailable;
+       row.insertCell(3).textContent = product.qtysold;
+   });
+
+   displaySection.appendChild(tableHeading);
+   displaySection.appendChild(table);
+}
 
 
 

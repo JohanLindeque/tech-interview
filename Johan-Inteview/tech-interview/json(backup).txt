@@ -1,0 +1,158 @@
+[
+  {
+    "sku": "ABC123",
+    "description": "Widget A",
+    "qtyavailable": 100,
+    "qtysold": 25
+  },
+  {
+    "sku": "DEF456",
+    "description": "Widget B",
+    "qtyavailable": 75,
+    "qtysold": 10
+  },
+  {
+    "sku": "GHI789",
+    "description": "Widget C",
+    "qtyavailable": 50,
+    "qtysold": 30
+  },
+  {
+    "sku": "JKL012",
+    "description": "Widget D",
+    "qtyavailable": 200,
+    "qtysold": 50
+  },
+  {
+    "sku": "MNO345",
+    "description": "Widget E",
+    "qtyavailable": 150,
+    "qtysold": 20
+  },
+  {
+    "sku": "PQR678",
+    "description": "Widget F",
+    "qtyavailable": 90,
+    "qtysold": 15
+  },
+  {
+    "sku": "STU901",
+    "description": "Widget G",
+    "qtyavailable": 120,
+    "qtysold": 40
+  },
+  {
+    "sku": "DEF002",
+    "description": "Everyday Widget",
+    "qtyavailable": 150,
+    "qtysold": 8
+  },
+  {
+    "sku": "GHI003",
+    "description": "Basic Widget",
+    "qtyavailable": 300,
+    "qtysold": 10
+  },
+  {
+    "sku": "VWX234",
+    "description": "Widget H",
+    "qtyavailable": 180,
+    "qtysold": 60
+  },
+  {
+    "sku": "YZA567",
+    "description": "Widget I",
+    "qtyavailable": 70,
+    "qtysold": 5
+  },
+  {
+    "sku": "BCD890",
+    "description": "Widget J",
+    "qtyavailable": 110,
+    "qtysold": 35
+  },
+  {
+    "sku": "EFG123",
+    "description": "Widget X",
+    "qtyavailable": 85,
+    "qtysold": 15
+  },
+  {
+    "sku": "HIJ456",
+    "description": "Widget Y",
+    "qtyavailable": 60,
+    "qtysold": 20
+  },
+  {
+    "sku": "KLM789",
+    "description": "Widget Z",
+    "qtyavailable": 75,
+    "qtysold": 5
+  },
+  {
+    "sku": "NOP012",
+    "description": "Widget P",
+    "qtyavailable": 110,
+    "qtysold": 30
+  },
+  {
+    "sku": "ABC001",
+    "description": "Standard Widget",
+    "qtyavailable": 200,
+    "qtysold": 5
+  },
+  {
+    "sku": "JKL004",
+    "description": "Simple Widget",
+    "qtyavailable": 250,
+    "qtysold": 7
+  },
+  {
+    "sku": "QRS345",
+    "description": "Widget Q",
+    "qtyavailable": 45,
+    "qtysold": 10
+  },
+  {
+    "sku": "XYZ123",
+    "description": "Limited Edition Widget",
+    "qtyavailable": 5,
+    "qtysold": 45
+  },
+  {
+    "sku": "LMN456",
+    "description": "Rare Collectible Widget",
+    "qtyavailable": 2,
+    "qtysold": 18
+  },
+  {
+    "sku": "TUV678",
+    "description": "Widget R",
+    "qtyavailable": 95,
+    "qtysold": 25
+  },
+  {
+    "sku": "WXY901",
+    "description": "Widget S",
+    "qtyavailable": 70,
+    "qtysold": 15
+  },
+  {
+    "sku": "ZAB234",
+    "description": "Widget T",
+    "qtyavailable": 120,
+    "qtysold": 40
+  },
+  {
+    "sku": "BCD567",
+    "description": "Widget U",
+    "qtyavailable": 55,
+    "qtysold": 10
+  },
+  {
+    "sku": "EFG890",
+    "description": "Widget V",
+    "qtyavailable": 105,
+    "qtysold": 25
+  }
+]

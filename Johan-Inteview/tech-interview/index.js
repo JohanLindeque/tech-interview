@@ -1,3 +1,4 @@
+// Johan Lindeque
 
 // The Api url with data
 const ApiUrl = 'https://4c9baa0f-7c69-4e96-9b24-4589c1231f12.mock.pstmn.io/inventoryfeed';
@@ -24,6 +25,7 @@ async function getProductsData(){
             console.log("Error: No data found");
         }
         else{
+            // Call the function to display the data
             displayTheData();
            
         }
@@ -31,6 +33,8 @@ async function getProductsData(){
     }
 
 }
+
+// Call the function to get the data
 getProductsData();
 
 //  Display all the data on the frontend 
@@ -39,6 +43,7 @@ function displayTheData(){
     top3Sales(products);
     lowerQtyThenSold(products);
     itemsNeedRestockInventory(products);
+    deadStock(products);
 
 }
 
@@ -141,6 +146,47 @@ function itemsNeedRestockInventory(products){
    });
 
    restock.forEach((product) => {
+       const row = table.insertRow(-1);
+       row.insertCell(0).textContent = product.sku;
+       row.insertCell(1).textContent = product.description;
+       row.insertCell(2).textContent = product.qtyavailable;
+       row.insertCell(3).textContent = product.qtysold;
+   });
+   displaySection.appendChild(tableHeading);
+   displaySection.appendChild(table);
+}
+
+
+// Function display dead stock
+function deadStock(products){
+    const slowMovingItems = products.filter(product => {
+        const qtySold = product.qtysold;
+        const qtyAvailable = product.qtyavailable;
+        const threshold = 0.05; // 5%
+
+        return (qtySold / qtyAvailable) <= threshold;
+    });
+
+    const displaySection = document.getElementById('displaySection');
+    
+
+    
+
+    // Create the table to show the data
+    const tableHeading = document.createElement('h2');
+    tableHeading.textContent = 'Items that are moving slow(dead stock):';
+
+   const table = document.createElement('table');
+   const headings = ['SKU', 'Description', 'Qty Available', 'Qty Sold'];
+
+   const headerRow = table.insertRow(0);
+   headings.forEach((heading, index) => {
+       const th = document.createElement('th');
+       th.textContent = heading;
+       headerRow.appendChild(th);
+   });
+
+   slowMovingItems.forEach((product) => {
        const row = table.insertRow(-1);
        row.insertCell(0).textContent = product.sku;
        row.insertCell(1).textContent = product.description;

@@ -42,44 +42,37 @@ function displayTheData(){
 
 
 
-// function to display the top 3 products with the highest quantity sold
-function top3Sales(products){
-    const top3 = products.sort((a,b) => b.qtysold - a.qtysold).slice(0,3);
-    console.log(top3);
+function top3Sales(products) {
+    const top3 = products.sort((a, b) => b.qtysold - a.qtysold).slice(0, 3);
+    // Clear existing content
+    const displaySection = document.getElementById('displaySection');
+    displaySection.innerHTML = ''; 
 
-
-    //Create table
     const tableHeading = document.createElement('h2');
-    tableHeading.textContent = "Top # best sellers:";
-    
-    const table = document.createElement('table');
-    const headerRow = table.insertRow(0);
-    
-    const headings = ["SKU", "Description", "Qty Available", "Qty Sold"];
-    
-    for (const element of headings) {
-        const th = document.createElement('th');
-        th.textContent = element;
-        headerRow.appendChild(th);
-        break;
-    }
+    tableHeading.textContent = 'Top 3 best sellers:';
 
-    // Add data to table
-    for (const product of products) {
+    const table = document.createElement('table');
+    const headings = ['SKU', 'Description', 'Qty Available', 'Qty Sold'];
+
+    const headerRow = table.insertRow(0);
+    headings.forEach((heading, index) => {
+        const th = document.createElement('th');
+        th.textContent = heading;
+        headerRow.appendChild(th);
+    });
+
+    top3.forEach((product) => {
         const row = table.insertRow(-1);
         row.insertCell(0).textContent = product.sku;
         row.insertCell(1).textContent = product.description;
         row.insertCell(2).textContent = product.qtyavailable;
         row.insertCell(3).textContent = product.qtysold;
-        break;
-    }
-    
-    // displaySection.innerHTML = " ";
-    // displaySection.appendChild(tableHeading);
-    // displaySection.appendChild(table);
-    
+    });
 
+    displaySection.appendChild(tableHeading);
+    displaySection.appendChild(table);
 }
+
 
 // function lowerQtyThenSold(){
     

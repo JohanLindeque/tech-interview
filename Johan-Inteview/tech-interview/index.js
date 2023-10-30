@@ -38,11 +38,12 @@ function displayTheData(){
     
     top3Sales(products);
     lowerQtyThenSold(products);
+    itemsNeedRestockInventory(products);
 
 }
 
 
-
+// Function to display the top 3 best sellers
 function top3Sales(products) {
     const top3 = products.sort((a, b) => b.qtysold - a.qtysold).slice(0, 3);
     
@@ -78,10 +79,10 @@ function top3Sales(products) {
 }
 
 
+// Function to display the items that have a lower qty then sold
 function lowerQtyThenSold(products){
    const lowerQty = products.filter(products => products.qtyavailable < products.qtysold);
    const displaySection = document.getElementById('displaySection');
-
 
    // Create the table to show the data
    const tableHeading = document.createElement('h2');
@@ -110,4 +111,43 @@ function lowerQtyThenSold(products){
 }
 
 
+// Function to display the items that need to be restocked
+function itemsNeedRestockInventory(products){
+    const restock = products.filter(product => {
+        const qtySold = product.qtysold;
+        const qtyAvailable = product.qtyavailable;
+        const threshold = 0.25; // 25%
+
+        return (qtyAvailable / qtySold) <= threshold;
+    });
+
+    const displaySection = document.getElementById('displaySection');
+    
+
+    
+
+    // Create the table to show the data
+    const tableHeading = document.createElement('h2');
+    tableHeading.textContent = 'Items Requiring New Inventory:';
+
+   const table = document.createElement('table');
+   const headings = ['SKU', 'Description', 'Qty Available', 'Qty Sold'];
+
+   const headerRow = table.insertRow(0);
+   headings.forEach((heading, index) => {
+       const th = document.createElement('th');
+       th.textContent = heading;
+       headerRow.appendChild(th);
+   });
+
+   restock.forEach((product) => {
+       const row = table.insertRow(-1);
+       row.insertCell(0).textContent = product.sku;
+       row.insertCell(1).textContent = product.description;
+       row.insertCell(2).textContent = product.qtyavailable;
+       row.insertCell(3).textContent = product.qtysold;
+   });
+   displaySection.appendChild(tableHeading);
+   displaySection.appendChild(table);
+}
 
